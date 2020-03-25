@@ -1,0 +1,173 @@
+$dk-border-color: rgb(56, 68, 77);
+$dk-color: rgb(255, 255, 255);
+$dk-background-color: rgb(21, 32, 43);
+$dk-sub-text-color: rgb(136, 153, 166);
+$dk-link-color: rgb(27, 149, 224);
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.app {
+  text-align: left;
+  font-size: 16px;
+  color: black;
+  background: white;
+  padding: 16px;
+  height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+}
+
+.app.app-dark {
+  background: $dk-background-color;
+  border-color: $dk-border-color;
+  color: $dk-color;
+}
+
+.app-light {
+
+}
+
+.link {
+  color: #61dafb;
+}
+
+.bold-text {
+  font-weight: 700;
+}
+
+.title {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.referenceImage {
+  position: absolute;
+  z-index: 0;
+}
+
+.tweet-form-container {
+  margin: 100px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .tweet-form {
+    width: 598px;
+    height: 337px;
+    border: 1px solid;
+    border-color: $dk-border-color;
+    padding: 10px 15px 0;
+    z-index: 1;
+    .tweet-header {
+      display: flex;
+      position: relative;
+      padding-bottom: 10px;
+
+      .tweet-user-photo {
+        margin: 0 5px;
+
+        img {
+          border-radius: 50%;
+          width: 49px;
+          height: 49px;
+        }
+      }
+
+      .tweet-user-identifiers {
+        margin: 0 5px;
+
+        .tweet-user-name {
+          display:flex;
+          font-weight: 700;
+        }
+
+        .tweet-user-handle {
+          color: $dk-sub-text-color;
+        }
+
+        .tweet-verified-icon {
+          width: 24px;
+          height: 24px;
+          fill: white;
+          margin-left: 2px;
+        }
+      }
+
+      .tweet-dropdown-arrow {
+        position: absolute;
+        right: 0;
+        .tweet-dropdown-icon {
+          width: 15px;
+          height: 15px;
+          font-size: 15px;
+          fill: $dk-sub-text-color;
+        }
+      }
+    }
+
+    .tweet-post-message {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+      color: $dk-color;
+      font-size: 23px;
+      line-height: 1.3125;
+      padding-bottom: 15px;
+    }
+
+    .tweet-post-info {
+      color: $dk-sub-text-color;
+      display: flex;
+      margin-bottom: 12px;
+
+      .tweet-post-date {
+        display: flex;
+
+        .tweet-post-date-separator {
+          margin: 0 5px;
+        }
+      }
+      .tweet-post-device {
+        color: $dk-link-color;
+      }
+    }
+
+    .tweet-stats-content {
+      display: flex;
+      border-top: 1px solid $dk-border-color;
+      border-bottom: 1px solid $dk-border-color;
+      padding: 15px 0;
+      .tweet-stats-retweets, .tweet-stats-likes {
+        color: $dk-sub-text-color;
+        .bold-text {
+          color: white;
+          margin-right: 5px;
+        }
+      }
+
+      .tweet-stats-likes {
+        margin-left: 20px;
+      }
+    }
+
+    .tweet-footer-content {
+      display: flex;
+      color: white;
+      justify-content: space-around;
+      .tweet-footer-comment-button, .tweet-footer-retweet-button, .tweet-footer-like-button, .tweet-footer-export-button {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+          fill: $dk-sub-text-color;
+          width: 22.5px;
+          height: 22px;
+        }
+      }
+    }
+  }
+}
