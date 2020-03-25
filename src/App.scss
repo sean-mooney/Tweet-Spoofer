@@ -64,10 +64,10 @@ html {
     .tweet-header {
       display: flex;
       position: relative;
-      padding-bottom: 10px;
+      padding-bottom: 6px;
 
       .tweet-user-photo {
-        margin: 0 5px;
+        // margin: 0 5px;
 
         img {
           border-radius: 50%;
@@ -77,11 +77,13 @@ html {
       }
 
       .tweet-user-identifiers {
-        margin: 0 5px;
+        margin: 3px 9px;
+        letter-spacing: -0.4px;
 
         .tweet-user-name {
           display:flex;
           font-weight: 700;
+          height: 19px;
         }
 
         .tweet-user-handle {
@@ -89,8 +91,8 @@ html {
         }
 
         .tweet-verified-icon {
-          width: 24px;
-          height: 24px;
+          width: 18px;
+          height: 22px;
           fill: white;
           margin-left: 2px;
         }
@@ -98,7 +100,9 @@ html {
 
       .tweet-dropdown-arrow {
         position: absolute;
-        right: 0;
+        right: -2px;
+        top: 3px;
+
         .tweet-dropdown-icon {
           width: 15px;
           height: 15px;
@@ -119,10 +123,16 @@ html {
     .tweet-post-info {
       color: $dk-sub-text-color;
       display: flex;
-      margin-bottom: 12px;
+      margin-bottom: 13px;
 
       .tweet-post-date {
         display: flex;
+        font-size: 15px;
+
+        .tweet-post-date-mdy {
+          margin-top: -1px;
+          margin-left: -2px;
+        }
 
         .tweet-post-date-separator {
           margin: 0 5px;
@@ -130,6 +140,7 @@ html {
       }
       .tweet-post-device {
         color: $dk-link-color;
+        font-size: 15px;
       }
     }
 
@@ -138,6 +149,9 @@ html {
       border-top: 1px solid $dk-border-color;
       border-bottom: 1px solid $dk-border-color;
       padding: 15px 0;
+      font-size: 15px;
+      height: 50px;
+      
       .tweet-stats-retweets, .tweet-stats-likes {
         color: $dk-sub-text-color;
         .bold-text {
