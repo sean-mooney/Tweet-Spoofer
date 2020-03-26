@@ -78,6 +78,9 @@ html {
   align-items: center;
   justify-content: center;
   .tweet-form {
+    background: $dk-background-color;
+    border-color: $dk-border-color;
+    color: $dk-color;
     width: 598px;
     // height: 337px;
     border: 1px solid;
@@ -200,7 +203,7 @@ html {
         justify-content: center;
 
         svg {
-          fill: $dk-sub-text-color;
+          // fill: $dk-sub-text-color;
           width: 22.5px;
           height: 22px;
         }
