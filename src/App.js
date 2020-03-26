@@ -10,6 +10,8 @@ export default class App extends React.Component {
       verified: true,
       showImageError: false,
       profilePicture: null,
+      image: "",
+      showImage: false
     }
     this.handleFileInput = this.handleFileInput.bind(this);
     this.exportImage = this.exportImage.bind(this);
@@ -28,9 +30,11 @@ export default class App extends React.Component {
 
   exportImage() {
     var node = document.getElementById('tweet');
+    var _ = this;
     htmlToImage.toPng(node)
       .then(function (dataUrl) {
-        saveAs(dataUrl, "mock-tweet.png");
+        // saveAs(dataUrl, "mock-tweet.png");
+        _.setState({image: dataUrl, showImage: true})
       })
       .catch(function (error) {
         console.error('oops, something went wrong!', error);
@@ -117,10 +121,19 @@ export default class App extends React.Component {
               {!this.state.showImageError || <div className="error-text">There was a problem uploading this image</div>}
             </div>
             <div className="image-export-button">
-              <input type="button" value="Download Image" className={`btn`} onClick={() => this.exportImage()}/>
+              <input type="button" value="Export Image" className={`btn`} onClick={() => this.exportImage()}/>
             </div>
           </div>
         </div>
+        {!this.state.showImage ||
+        <div className="modal-container" onClick={() => this.setState({showImage: false})}>
+          <div className="modal-exit">&#10006;</div>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <img alt="" src={this.state.image}/>
+            <div className="modal-instructions">Right click and "Save As" or copy the image to your clipboard.</div>
+          </div>
+        </div>
+        }
       </div>
     );
   }
