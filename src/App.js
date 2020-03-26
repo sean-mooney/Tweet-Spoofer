@@ -66,7 +66,7 @@ export default class App extends React.Component {
               </div>
             </div>
             <div contentEditable="true" suppressContentEditableWarning={true} className="tweet-post-message" spellCheck="false">
-              Price transparency is so important for the people of our Country. In many ways, it will prove to be as important as healthcare itself. A great issue for both Republicans and Democrats. Hopefully it will be approved!
+              You can click here and edit me, as well as the name, handle, date, device, likes, and retweets. Don't forget about the picture too!
             </div>
             <div className="tweet-post-info">
               <div className="tweet-post-date">
