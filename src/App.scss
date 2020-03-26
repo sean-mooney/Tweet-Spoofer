@@ -4,6 +4,8 @@ $dk-background-color: rgb(21, 32, 43);
 $dk-sub-text-color: rgb(136, 153, 166);
 $dk-link-color: rgb(27, 149, 224);
 
+$failure: red;
+
 html {
   box-sizing: border-box;
 }
@@ -38,6 +40,26 @@ html {
 
 .bold-text {
   font-weight: 700;
+}
+
+.error-text {
+  text-align: center;
+  padding: 16px;
+  color: $failure;
+}
+
+.btn {
+  padding: 16px;
+  font-size: 16px;
+  background: none;
+  border: 1px solid $dk-border-color;
+  color: $dk-color;
+  cursor: pointer;
+  min-width: 200px;
+}
+
+.btn.toggled {
+  background: $dk-link-color;
 }
 
 .title {
@@ -184,5 +206,16 @@ html {
         }
       }
     }
+  }
+}
+
+.controls-container {
+  .controls-title {
+    margin-right: 32px;
+  }
+
+  .controls-list {
+    display: flex;
+    justify-content: space-evenly;
   }
 }
